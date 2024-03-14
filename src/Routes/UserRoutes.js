@@ -12,7 +12,6 @@ import Contect from '../user/container/Contect/Contect';
 import Footer from '../user/component/Footer/Footer';
 import Error from '../user/container/Pages/Error';
 
-
 function UserRoutes(props) {
     return (
         <>
@@ -28,7 +27,6 @@ function UserRoutes(props) {
                 <Route exact path='/propertytype' element={<PropertyType />} />
                 <Route exact path='/propertyagent' element={<PropertyAgent />} />
                 <Route exact path='/contect' element={<Contect />} />
-
             </Routes>
             <Footer />
         </>
