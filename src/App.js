@@ -10,8 +10,6 @@ function App() {
   return (
 
     <>
-     
-
       <Routes>
                 <Route exact path='/*' element={<UserRoutes />} />
                 <Route exact path='/admin/*' element={<AdminRoutes />} />
