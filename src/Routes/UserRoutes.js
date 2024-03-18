@@ -23,14 +23,13 @@ function UserRoutes(props) {
                 <Route exact path='/' element={<Home />} />
                 <Route element={<PrivateRoutes />}>
                     <Route exact path='/about' element={<About />} />
-
                 </Route>
                 <Route exact path='/pages' />
                 <Route exact path='/testimonial' element={<Testimonial />} />
                 <Route exact path='/error' element={<Error />} />
                 <Route exact path='/property' />
-                <Route exact path='/propertylist/:id' element={<PropertTypeDetail />} />
                 <Route exact path='/propertylist' element={<PropertyList />} />
+                <Route exact path='/propertylist/:id' element={<PropertTypeDetail />} />
                 <Route exact path='/propertytype' element={<PropertyType />} />
                 <Route exact path='/propertyagent' element={<PropertyAgent />} />
                 <Route exact path='/contect' element={<Contect />} />

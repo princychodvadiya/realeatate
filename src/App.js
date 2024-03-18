@@ -11,9 +11,9 @@ function App() {
 
     <>
       <Routes>
-                <Route exact path='/*' element={<UserRoutes />} />
-                <Route exact path='/admin/*' element={<AdminRoutes />} />
-            </Routes>
+        <Route exact path='/*' element={<UserRoutes />} />
+        <Route exact path='/admin/*' element={<AdminRoutes />} />
+      </Routes>
 
     </>
   );

@@ -2,23 +2,31 @@
     "property": [
         {
             "id": 1,
-            "name": "Appartment",
-            "address": "123 Street, New York, USA"
+            "property_name": "Appartment",
+            "property_address": "123 Street, New York, USA",
+            "image": "img/property-1.jpg",
+            "amount": 12345
         },
         {
             "id": 2,
-            "name": "Appartment",
-            "address": "123 Street, New York, USA"
+            "property_name": "Appartment",
+            "property_address": "123 Street, New York, USA",
+            "image": "img/property-1.jpg",
+            "amount": 12345
         },
         {
             "id": 3,
-            "name": "Appartment",
-            "address": "123 Street, New York, USA"
+            "property_name": "Appartment",
+            "property_address": "123 Street, New York, USA",
+            "image": "img/property-1.jpg",
+            "amount": 12345
         },
         {
             "id": 4,
-            "name": "Appartment",
-            "address": "123 Street, New York, USA"
+            "property_name": "Appartment",
+            "property_address": "123 Street, New York, USA",
+            "image": "img/property-1.jpg",
+            "amount": 12345
         }
     ]
 }

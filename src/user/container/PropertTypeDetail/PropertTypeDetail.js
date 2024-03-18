@@ -1,6 +1,25 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 
 function PropertTypeDetail(props) {
+    const { id } = useParams();
+
+    const getdata = async () => {
+        try {
+            const response = await fetch("http://localhost:8000/property");
+            const data = await response.json()
+
+            console.log(id);
+            setpropertylist(data)
+
+        } catch (error) {
+            console.log(error.message);
+        }
+    }
+
+    useEffect = (() => {
+        getdata()
+    }, [])
     return (
         <div>
             {/* Single Product Start */}
