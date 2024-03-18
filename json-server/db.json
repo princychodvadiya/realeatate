@@ -4,28 +4,48 @@
             "id": 1,
             "property_name": "Appartment",
             "property_address": "123 Street, New York, USA",
+            "location": "123 Street, New York, USA",
             "image": "img/property-1.jpg",
             "amount": 12345
         },
         {
             "id": 2,
-            "property_name": "Appartment",
+            "property_name": "Villa",
             "property_address": "123 Street, New York, USA",
-            "image": "img/property-1.jpg",
+            "image": "img/property-2.jpg",
+            "location": "123 Street, New York, USA",
             "amount": 12345
         },
         {
             "id": 3,
-            "property_name": "Appartment",
+            "property_name": "Office",
             "property_address": "123 Street, New York, USA",
-            "image": "img/property-1.jpg",
+            "image": "img/property-3.jpg",
+            "location": "123 Street, New York, USA",
             "amount": 12345
         },
         {
             "id": 4,
-            "property_name": "Appartment",
+            "property_name": "Building",
             "property_address": "123 Street, New York, USA",
-            "image": "img/property-1.jpg",
+            "image": "img/property-4.jpg",
+            "location": "123 Street, New York, USA",
+            "amount": 12345
+        },
+        {
+            "id": 5,
+            "property_name": "Home",
+            "property_address": "123 Street, New York, USA",
+            "location": "123 Street, New York, USA",
+            "image": "img/property-5.jpg",
+            "amount": 12345
+        },
+        {
+            "id": 6,
+            "property_name": "Shop",
+            "property_address": "123 Street, New York, USA",
+            "location": "123 Street, New York, USA",
+            "image": "img/property-6.jpg",
             "amount": 12345
         }
     ]

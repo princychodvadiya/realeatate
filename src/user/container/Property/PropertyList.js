@@ -2,23 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function PropertyList(props) {
-
-    const [propertylist, setpropertylist] = useState([])
+    const [propertylist, setpropertylist] = useState([]);
     const getdata = async () => {
-        try {
-            const response = await fetch("http://localhost:8000/property");
-            const data = await response.json()
+        const response = await fetch("http://localhost:8000/property");
+        const data = await response.json()
 
-            console.log(data);
-            setpropertylist(data)
-        } catch (error) {
-            console.log(error.message);
-        }
+        console.log(data);
+        setpropertylist(data)
     }
-
-    useEffect = (() => {
+    useEffect(() => {
         getdata()
     }, [])
+
 
     return (
         <div>
@@ -43,6 +38,7 @@ function PropertyList(props) {
                     </div>
                 </div>
                 {/* Header End */}
+
                 {/* Search Start */}
                 <div className="container-fluid bg-primary mb-5 wow fadeIn" data-wow-delay="0.1s" style={{ padding: 35 }}>
                     <div className="container">
@@ -107,7 +103,6 @@ function PropertyList(props) {
                                 <div className="row g-4">
                                     {
                                         propertylist.map((v) => (
-
                                             <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                                                 <Link to={`/propertylist/${v.id}`}>
                                                     <div className="property-item rounded overflow-hidden">
@@ -119,9 +114,9 @@ function PropertyList(props) {
                                                                 {v.property_name}</div>
                                                         </div>
                                                         <div className="p-4 pb-0">
-                                                            <h5 className="text-primary mb-3">${v.price}</h5>
-                                                            <a className="d-block h5 mb-2" href>Golden Urban House For Sell</a>
-                                                            <p><i className="fa fa-map-marker-alt text-primary me-2" /> {v.address}</p>
+                                                            <h5 className="text-primary mb-3">${v.amount}</h5>
+                                                            <a className="d-block h5 mb-2" href>{v.property_address}</a>
+                                                            <p><i className="fa fa-map-marker-alt text-primary me-2" />{v.location}</p>
                                                         </div>
                                                         <div className="d-flex border-top">
                                                             <small className="flex-fill text-center border-end py-2"><i className="fa fa-ruler-combined text-primary me-2" />1000 Sqft</small>
@@ -131,10 +126,30 @@ function PropertyList(props) {
                                                     </div>
                                                 </Link>
                                             </div>
-
                                         ))
                                     }
-                                    {/* 
+                                    {/* <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                        <div className="property-item rounded overflow-hidden">
+                                            <div className="position-relative overflow-hidden">
+                                                <a href><img className="img-fluid" src="img/property-1.jpg" alt /></a>
+                                                <div className="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">
+                                                    For Sell</div>
+                                                <div className="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
+                                                    Appartment</div>
+                                            </div>
+                                            <div className="p-4 pb-0">
+                                                <h5 className="text-primary mb-3">$12,345</h5>
+                                                <a className="d-block h5 mb-2" href>Golden Urban House For Sell</a>
+                                                <p><i className="fa fa-map-marker-alt text-primary me-2" />123 Street, New York,
+                                                    USA</p>
+                                            </div>
+                                            <div className="d-flex border-top">
+                                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-ruler-combined text-primary me-2" />1000 Sqft</small>
+                                                <small className="flex-fill text-center border-end py-2"><i className="fa fa-bed text-primary me-2" />3 Bed</small>
+                                                <small className="flex-fill text-center py-2"><i className="fa fa-bath text-primary me-2" />2 Bath</small>
+                                            </div>
+                                        </div>
+                                    </div>
                                     <div className="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
                                         <div className="property-item rounded overflow-hidden">
                                             <div className="position-relative overflow-hidden">
@@ -248,9 +263,7 @@ function PropertyList(props) {
                                     <div className="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
                                         <a className="btn btn-primary py-3 px-5" href>Browse More Property</a>
                                     </div>
-
                                 </div>
-
                             </div>
                             <div id="tab-2" className="tab-pane fade show p-0">
                                 <div className="row g-4">
