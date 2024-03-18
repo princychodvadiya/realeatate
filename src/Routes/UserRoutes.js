@@ -11,8 +11,8 @@ import PropertyAgent from '../user/container/Property/PropertyAgent';
 import Contect from '../user/container/Contect/Contect';
 import Footer from '../user/component/Footer/Footer';
 import Error from '../user/container/Pages/Error';
-import PropertTypeDetail from '../user/container/PropertTypeDetail/PropertTypeDetail';
 import PrivateRoutes from './PrivateRoutes';
+import PropertTypeDetail from '../user/container/PropertTypeDetail/PropertTypeDetail';
 
 function UserRoutes(props) {
     return (

@@ -119,9 +119,9 @@ function PropertyList(props) {
                                                             <p><i className="fa fa-map-marker-alt text-primary me-2" />{v.location}</p>
                                                         </div>
                                                         <div className="d-flex border-top">
-                                                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-ruler-combined text-primary me-2" />1000 Sqft</small>
-                                                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-bed text-primary me-2" />3 Bed</small>
-                                                            <small className="flex-fill text-center py-2"><i className="fa fa-bath text-primary me-2" />2 Bath</small>
+                                                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-ruler-combined text-primary me-2" />{v.fecility_first}</small>
+                                                            <small className="flex-fill text-center border-end py-2"><i className="fa fa-bed text-primary me-2" />{v.fecility_sec}</small>
+                                                            <small className="flex-fill text-center py-2"><i className="fa fa-bath text-primary me-2" />{v.fecility_third}</small>
                                                         </div>
                                                     </div>
                                                 </Link>

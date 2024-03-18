@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 function PropertTypeDetail(props) {
 
-    let [propertydata, setpropertydata] = useState([]);
+    let [propertydata, setpropertydata] = useState({});
     const { id } = useParams();
+    console.log(id);
 
     const getdata = async () => {
         try {
             const response = await fetch("http://localhost:8000/property");
             const data = await response.json()
 
-            console.log(id);
+
             const propertyfilterdata = data.find((v) => v.id === id)
             setpropertydata(propertyfilterdata);
 
@@ -35,14 +37,23 @@ function PropertTypeDetail(props) {
                                 <div className="col-lg-6">
                                     <div className="border rounded">
                                         <a href="#">
-                                            {/* <img src={`../${propertydata.image}`} className="img-fluid rounded" alt="Image" /> */}
+                                            <img src={`../${propertydata.image}`} className="img-fluid rounded" alt="Image" />
                                         </a>
                                     </div>
                                 </div>
                                 <div className="col-lg-6">
-                                    <h4 className="fw-bold mb-3">{propertydata.property_address}</h4>
+                                    <h4 className="fw-bold mb-3">{propertydata.property_name}</h4>
+                                    <div className="d-flex border-top">
+                                        <small className="flex-fill text-center border-end py-2"><i className="fa fa-ruler-combined text-primary me-2" />{propertydata.fecility_first}</small>
+                                        <small className="flex-fill text-center border-end py-2"><i className="fa fa-bed text-primary me-2" />{propertydata.fecility_sec}</small>
+                                        <small className="flex-fill text-center py-2"><i className="fa fa-bath text-primary me-2" />{propertydata.fecility_third}</small>
+                                    </div>
+
+                                    <br></br>
+                                    <h4>{propertydata.property_address}</h4>
+
                                     <p className="mb-3">{propertydata.location}</p>
-                                    <h5 className="fw-bold mb-3">{propertydata?.amount}$</h5>
+                                    <h5 className="fw-bold mb-3"><i className="fa fa-map-marker-alt text-primary me-2" />${propertydata.amount}</h5>
                                     <div className="d-flex mb-4">
                                         <i className="fa fa-star text-secondary" />
                                         <i className="fa fa-star text-secondary" />
@@ -52,19 +63,19 @@ function PropertTypeDetail(props) {
                                     </div>
                                     <p className="mb-4">The generated Lorem Ipsum is therefore always free from repetition injected humour, or non-characteristic words etc.</p>
                                     <p className="mb-4">Susp endisse ultricies nisi vel quam suscipit. Sabertooth peacock flounder; chain pickerel hatchetfish, pencilfish snailfish</p>
-                                    <div className="input-group quantity mb-5" style={{ width: 100 }}>
-                                        <div className="input-group-btn">
+                                    {/* <div className="input-group quantity mb-5" style={{ width: 100 }}> */}
+                                    {/* <div className="input-group-btn">
                                             <button className="btn btn-sm btn-minus rounded-circle bg-light border">
                                                 <i className="fa fa-minus" />
                                             </button>
-                                        </div>
-                                        <input type="text" className="form-control form-control-sm text-center border-0" defaultValue={1} />
+                                        </div> */}
+                                    {/* <input type="text" className="form-control form-control-sm text-center border-0" defaultValue={1} />
                                         <div className="input-group-btn">
                                             <button className="btn btn-sm btn-plus rounded-circle bg-light border">
                                                 <i className="fa fa-plus" />
                                             </button>
-                                        </div>
-                                    </div>
+                                        </div> */}
+                                    {/* </div> */}
                                     <a href="#" className="btn border border-secondary rounded-pill px-4 py-2 mb-4 text-primary"><i className="fa fa-shopping-bag me-2 text-primary" /> Add to cart</a>
                                 </div>
                                 <div className="col-lg-12">
@@ -80,52 +91,7 @@ function PropertTypeDetail(props) {
                                                 Susp endisse ultricies nisi vel quam suscipit </p>
                                             <p>Sabertooth peacock flounder; chain pickerel hatchetfish, pencilfish snailfish filefish Antarctic
                                                 icefish goldeye aholehole trumpetfish pilot fish airbreathing catfish, electric ray sweeper.</p>
-                                            <div className="px-2">
-                                                <div className="row g-4">
-                                                    <div className="col-6">
-                                                        <div className="row bg-light align-items-center text-center justify-content-center py-2">
-                                                            <div className="col-6">
-                                                                <p className="mb-0">Weight</p>
-                                                            </div>
-                                                            <div className="col-6">
-                                                                <p className="mb-0">1 kg</p>
-                                                            </div>
-                                                        </div>
-                                                        <div className="row text-center align-items-center justify-content-center py-2">
-                                                            <div className="col-6">
-                                                                <p className="mb-0">Country of Origin</p>
-                                                            </div>
-                                                            <div className="col-6">
-                                                                <p className="mb-0">Agro Farm</p>
-                                                            </div>
-                                                        </div>
-                                                        <div className="row bg-light text-center align-items-center justify-content-center py-2">
-                                                            <div className="col-6">
-                                                                <p className="mb-0">Quality</p>
-                                                            </div>
-                                                            <div className="col-6">
-                                                                <p className="mb-0">Organic</p>
-                                                            </div>
-                                                        </div>
-                                                        <div className="row text-center align-items-center justify-content-center py-2">
-                                                            <div className="col-6">
-                                                                <p className="mb-0">Сheck</p>
-                                                            </div>
-                                                            <div className="col-6">
-                                                                <p className="mb-0">Healthy</p>
-                                                            </div>
-                                                        </div>
-                                                        <div className="row bg-light text-center align-items-center justify-content-center py-2">
-                                                            <div className="col-6">
-                                                                <p className="mb-0">Min Weight</p>
-                                                            </div>
-                                                            <div className="col-6">
-                                                                <p className="mb-0">250 Kg</p>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
+
                                         </div>
                                         <div className="tab-pane" id="nav-mission" role="tabpanel" aria-labelledby="nav-mission-tab">
                                             <div className="d-flex">

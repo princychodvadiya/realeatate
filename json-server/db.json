@@ -3,50 +3,68 @@
         {
             "id": 1,
             "property_name": "Appartment",
-            "property_address": "123 Street, New York, USA",
+            "property_address": "Golden Urban House For Sell",
             "location": "123 Street, New York, USA",
             "image": "img/property-1.jpg",
-            "amount": 12345
+            "amount": 12345,
+            "fecility_first": "1000 Sqft",
+            "fecility_sec": "3 Bed",
+            "fecility_third": "2 Bath"
         },
         {
             "id": 2,
             "property_name": "Villa",
-            "property_address": "123 Street, New York, USA",
+            "property_address": "Golden Urban House For Sell",
             "image": "img/property-2.jpg",
             "location": "123 Street, New York, USA",
-            "amount": 12345
+            "amount": 12345,
+            "fecility_first": "1000 Sqft",
+            "fecility_sec": "3 Bed",
+            "fecility_third": "2 Bath"
         },
         {
             "id": 3,
             "property_name": "Office",
-            "property_address": "123 Street, New York, USA",
+            "property_address": "Golden Urban House For Sell",
             "image": "img/property-3.jpg",
             "location": "123 Street, New York, USA",
-            "amount": 12345
+            "amount": 12345,
+            "fecility_first": "1000 Sqft",
+            "fecility_sec": "3 Bed",
+            "fecility_third": "2 Bath"
         },
         {
             "id": 4,
             "property_name": "Building",
-            "property_address": "123 Street, New York, USA",
+            "property_address": "Golden Urban House For Sell",
             "image": "img/property-4.jpg",
             "location": "123 Street, New York, USA",
-            "amount": 12345
+            "amount": 12345,
+            "fecility_first": "1000 Sqft",
+            "fecility_sec": "3 Bed",
+            "fecility_third": "2 Bath"
         },
         {
             "id": 5,
             "property_name": "Home",
-            "property_address": "123 Street, New York, USA",
+            "property_address": "Golden Urban House For Sell",
             "location": "123 Street, New York, USA",
             "image": "img/property-5.jpg",
-            "amount": 12345
+            "amount": 12345,
+            "fecility_first": "1000 Sqft",
+            "fecility_sec": "3 Bed",
+            "fecility_third": "2 Bath"
         },
         {
             "id": 6,
             "property_name": "Shop",
-            "property_address": "123 Street, New York, USA",
+            "property_address": "Golden Urban House For Sell",
             "location": "123 Street, New York, USA",
             "image": "img/property-6.jpg",
-            "amount": 12345
+            "amount": 12345,
+            "fecility_first": "1000 Sqft",
+            "fecility_sec": "3 Bed",
+            "fecility_third": "2 Bath"
         }
     ]
 }
