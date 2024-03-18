@@ -52,8 +52,8 @@ function PropertTypeDetail(props) {
                                     <br></br>
                                     <h4>{propertydata.property_address}</h4>
 
-                                    <p className="mb-3">{propertydata.location}</p>
-                                    <h5 className="fw-bold mb-3"><i className="fa fa-map-marker-alt text-primary me-2" />${propertydata.amount}</h5>
+                                    <p className="mb-3"><i className="fa fa-map-marker-alt text-primary me-2" />{propertydata.location}</p>
+                                    <h5 className="fw-bold mb-3">${propertydata.amount}</h5>
                                     <div className="d-flex mb-4">
                                         <i className="fa fa-star text-secondary" />
                                         <i className="fa fa-star text-secondary" />
