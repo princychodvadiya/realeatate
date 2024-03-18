@@ -2,6 +2,7 @@ import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
+import { Link } from 'react-router-dom';
 
 function Home(props) {
     let carouselOptions = {
@@ -10,8 +11,8 @@ function Home(props) {
         items: 1,
         dots: true,
         loop: true,
-        nav : true,
-        navText : [
+        nav: true,
+        navText: [
             '<div class="owl-prev"><i class="bi bi-chevron-left"></i></div>',
             '<div class="owl-next"><i class="bi bi-chevron-right"></i></div>'
         ]
@@ -36,6 +37,7 @@ function Home(props) {
             }
         }
     }
+
     return (
         <div>
             <div class="container-xxl bg-white p-0">
@@ -361,6 +363,7 @@ function Home(props) {
                                         <a className="btn btn-primary py-3 px-5" href>Browse More Property</a>
                                     </div>
                                 </div>
+
                             </div>
                             <div id="tab-2" className="tab-pane fade show p-0">
                                 <div className="row g-4">

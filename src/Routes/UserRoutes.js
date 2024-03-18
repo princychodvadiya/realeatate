@@ -11,19 +11,25 @@ import PropertyAgent from '../user/container/Property/PropertyAgent';
 import Contect from '../user/container/Contect/Contect';
 import Footer from '../user/component/Footer/Footer';
 import Error from '../user/container/Pages/Error';
+import PropertTypeDetail from '../user/container/PropertTypeDetail/PropertTypeDetail';
+import PrivateRoutes from './PrivateRoutes';
 
 function UserRoutes(props) {
     return (
         <>
-        
+
             <Header />
             <Routes>
                 <Route exact path='/' element={<Home />} />
-                <Route exact path='/about' element={<About />} />
+                <Route element={<PrivateRoutes />}>
+                    <Route exact path='/about' element={<About />} />
+
+                </Route>
                 <Route exact path='/pages' />
                 <Route exact path='/testimonial' element={<Testimonial />} />
                 <Route exact path='/error' element={<Error />} />
                 <Route exact path='/property' />
+                <Route exact path='/propertylist/:id' element={<PropertTypeDetail />} />
                 <Route exact path='/propertylist' element={<PropertyList />} />
                 <Route exact path='/propertytype' element={<PropertyType />} />
                 <Route exact path='/propertyagent' element={<PropertyAgent />} />

@@ -1,0 +1,24 @@
+{
+    "property": [
+        {
+            "id": 1,
+            "name": "Appartment",
+            "address": "123 Street, New York, USA"
+        },
+        {
+            "id": 2,
+            "name": "Appartment",
+            "address": "123 Street, New York, USA"
+        },
+        {
+            "id": 3,
+            "name": "Appartment",
+            "address": "123 Street, New York, USA"
+        },
+        {
+            "id": 4,
+            "name": "Appartment",
+            "address": "123 Street, New York, USA"
+        }
+    ]
+}
