@@ -16,14 +16,14 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import AppleIcon from '@mui/icons-material/Apple';
 import RateReviewIcon from '@mui/icons-material/RateReview';
 import { NavLink } from 'react-router-dom';
+import AttachMoneyOutlinedIcon from '@mui/icons-material/AttachMoneyOutlined';
 
 const drawerWidth = 240;
 
 const AdminLinks = [
-    { title: 'Product', icon: <AppleIcon />, to: '/admin/Products' },
+    { title: 'Property', icon: <AttachMoneyOutlinedIcon />, to: '/admin/Property' },
     { title: 'Review', icon: <RateReviewIcon />, to: '/admin/Reviews' }
 ]
 const openedMixin = (theme) => ({
