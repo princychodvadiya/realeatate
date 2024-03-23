@@ -11,12 +11,15 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { object, string, number, date, InferType } from 'yup';
 import { useFormik } from 'formik';
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
 
 
 function Property(props) {
 
     const [open, setOpen] = React.useState(false);
-    const [data, setdata] = useState([])
+    const [data, setdata] = useState([]);
+    const [update, setUpdate] = useState(null);
 
     let propertySchema = object({
         property_name: string().required("please enter property name"),
@@ -26,7 +29,42 @@ function Property(props) {
     const columns = [
         { field: 'property_name', headerName: 'Property Name', width: 130 },
         { field: 'description', headerName: 'Property Description', width: 190 },
+        {
+            field: 'delete', headerName: 'Delete',
+            renderCell: (params) => (
+                <DeleteIcon onClick={() => handleDelete(params.row.id)} />
+            ),
+        },
+        {
+            field: 'edit', headerName: 'Edit', width: 190,
+            renderCell: (params) => (
+                <EditIcon onClick={() => handleEdit(params.row)} />
+            ),
+        },
+
     ];
+
+    const handleDelete = (id) => {
+        console.log(id);
+        let localData = JSON.parse(localStorage.getItem('property'));
+        let newData = localData.filter((v) => v.id !== id)
+        localStorage.setItem('property', JSON.stringify(newData));
+        getdata()
+
+    }
+    const handleUpdate = (data) => {
+        let localdata = JSON.parse(localStorage.getItem('property'));
+        let index = localdata.findIndex(v => v.id === data.id)
+        localdata[index] = data;
+        localStorage.setItem("property", JSON.stringify(localdata))
+        getdata();
+    }
+    const handleEdit = (data) => {
+        console.log(data);
+        setOpen(true)
+        formik.setValues(data)
+        setUpdate(data)
+    }
 
     const formik = useFormik({
         initialValues: {
@@ -34,8 +72,13 @@ function Property(props) {
             description: '',
         },
         validationSchema: propertySchema,
-        onSubmit: values => {
-            handleAdd(values)
+        onSubmit: (values, { resetForm }) => {
+            if (update) {
+                handleUpdate(values)
+            } else {
+                handleAdd(values)
+
+            }
             handleClose()
         },
     });
@@ -44,6 +87,8 @@ function Property(props) {
     const handleAdd = (data) => {
         console.log(data);
         const rNo = Math.floor(Math.random() * 1000);
+
+        let localData = JSON.parse(localStorage.getItem("property"));
 
         if (localData) {
             localData.push({ ...data, id: rNo });
@@ -59,6 +104,8 @@ function Property(props) {
 
     const handleClose = () => {
         setOpen(false);
+        formik.resetForm(data)
+        setUpdate(null)
     };
 
     const getdata = () => {
@@ -73,7 +120,6 @@ function Property(props) {
     }, [])
 
 
-
     return (
         <>
             <React.Fragment>
@@ -83,17 +129,6 @@ function Property(props) {
                 <Dialog
                     open={open}
                     onClose={handleClose}
-                    PaperProps={{
-                        component: 'form',
-                        onSubmit: (event) => {
-                            event.preventDefault();
-                            const formData = new FormData(event.currentTarget);
-                            const formJson = Object.fromEntries(formData.entries());
-                            const email = formJson.email;
-                            console.log(email);
-                            handleClose();
-                        },
-                    }}
                 >
                     <DialogTitle>Property Dateils</DialogTitle>
                     <form onSubmit={handleSubmit}>
@@ -128,7 +163,7 @@ function Property(props) {
                             />
                             <DialogActions>
                                 <Button onClick={handleClose}>Cancel</Button>
-                                <Button type="submit">add</Button>
+                                <Button type="submit">{update ? 'Update' : 'Add'}</Button>
                             </DialogActions>
                         </DialogContent>
                     </form>
